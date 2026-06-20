@@ -82,10 +82,10 @@ export function RestaurantFilters({ filters, onChange, cities, cuisines }: Props
             className="h-11 w-full rounded-2xl border border-slate-200 bg-white px-3 text-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-100"
           >
             <option value="">Any price</option>
-            <option value="BUDGET">Budget · under RM40</option>
-            <option value="MODERATE">Moderate · RM40–80</option>
-            <option value="PREMIUM">Premium · RM80–120</option>
-            <option value="LUXURY">Luxury · RM120+</option>
+            <option value="BUDGET">Budget - under US$40</option>
+            <option value="MODERATE">Moderate - US$40-70</option>
+            <option value="PREMIUM">Premium - US$70-110</option>
+            <option value="LUXURY">Luxury - US$110+</option>
           </select>
         </div>
         <div>

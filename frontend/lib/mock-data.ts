@@ -1,497 +1,255 @@
 import {
-
   AiInsight,
-
   DashboardOverview,
-
   Reservation,
-
   Restaurant,
-
   RestaurantPerformance,
-
   TimeSlotAvailability,
-
 } from '@/types/tablebook';
 import { restaurantGallery, restaurantImage } from '@/lib/restaurant-images';
 
-
-
-
-
-
-
 export const restaurants: Restaurant[] = [
-
   {
-
     id: 'r1',
-
-    name: 'Warung Pak Din',
-
-    slug: 'warung-pak-din',
-
-    cuisine: 'Malay Cuisine',
-
-    city: 'Kuala Lumpur',
-
-    address: '18 Jalan Bangkung, Bangsar, 59100 Kuala Lumpur',
-
-    heroImageUrl: restaurantImage('warung-pak-din'),
-
-    gallery: restaurantGallery('warung-pak-din'),
-
-    priceRange: 'MODERATE',
-
-    rating: 4.8,
-
-    reviewCount: 612,
-
-    openingTime: '07:00',
-
-    closingTime: '22:00',
-
-    averageSpend: 42,
-
-    featured: true,
-
-    trending: true,
-
-    popularityScore: 96,
-
-    amenities: ['Nasi lemak bar', 'Halal certified', 'Family seating', 'Takeaway'],
-
-    dressCode: 'Casual',
-
-    parking: 'Street parking along Jalan Bangkung',
-
-    phone: '+60 3-2201 8842',
-
-    email: 'hello@warungpakdin.my',
-
-    description:
-
-      'A Bangsar institution serving fragrant nasi lemak, sambal telur, and charcoal-grilled ayam percik since the early mornings. The kind of place KL locals queue for before work.',
-
-    tables: [
-
-      { id: 't1', restaurantId: 'r1', label: 'W1', capacity: 2, isActive: true },
-
-      { id: 't2', restaurantId: 'r1', label: 'W2', capacity: 4, isActive: true },
-
-      { id: 't3', restaurantId: 'r1', label: 'W3', capacity: 6, isActive: true },
-
-    ],
-
-    reviews: [
-
-      { id: 'rv1', author: 'Hafiz Rahman', rating: 5, date: '2026-05-12', comment: 'Best nasi lemak in Bangsar. Sambal has the right kick — come before 9am on weekends.' },
-
-      { id: 'rv2', author: 'Nurul Izzah', rating: 5, date: '2026-05-08', comment: 'Brought my parents from Ipoh. They said it tastes like home. Service cepat and friendly.' },
-
-      { id: 'rv3', author: 'Raj Kumar', rating: 4, date: '2026-04-29', comment: 'Solid breakfast spot. Parking can be tight during peak hours but worth the wait.' },
-
-    ],
-
-  },
-
-  {
-
-    id: 'r2',
-
-    name: "Madam Li's Kitchen",
-
-    slug: 'madam-lis-kitchen',
-
-    cuisine: 'Chinese Malaysian Cuisine',
-
-    city: 'Petaling Jaya',
-
-    address: '72 Jalan SS 15/4, SS 15, 47500 Petaling Jaya, Selangor',
-
-    heroImageUrl: restaurantImage('madam-lis-kitchen'),
-
-    gallery: restaurantGallery('madam-lis-kitchen'),
-
-    priceRange: 'MODERATE',
-
-    rating: 4.7,
-
-    reviewCount: 489,
-
-    openingTime: '11:00',
-
-    closingTime: '22:30',
-
-    averageSpend: 68,
-
-    featured: true,
-
-    trending: false,
-
-    popularityScore: 88,
-
-    amenities: ['Private rooms', 'Dim sum lunch', 'Air-conditioned', 'Wheelchair access'],
-
-    dressCode: 'Smart casual',
-
-    parking: 'Basement parking at SS 15 commercial block',
-
-    phone: '+60 3-5622 3310',
-
-    email: 'reservations@madamliskitchen.my',
-
-    description:
-
-      'Home-style Chinese Malaysian cooking — curry laksa, butter prawns, and a weekend dim sum trolley that draws families from across the Klang Valley.',
-
-    tables: [
-
-      { id: 't4', restaurantId: 'r2', label: 'M1', capacity: 2, isActive: true },
-
-      { id: 't5', restaurantId: 'r2', label: 'M2', capacity: 4, isActive: true },
-
-      { id: 't6', restaurantId: 'r2', label: 'M3', capacity: 8, isActive: true },
-
-    ],
-
-    reviews: [
-
-      { id: 'rv4', author: 'Tan Mei Ling', rating: 5, date: '2026-05-15', comment: 'Our go-to for family gatherings. The salted egg yolk crab never disappoints.' },
-
-      { id: 'rv5', author: 'Arif Zainal', rating: 5, date: '2026-05-02', comment: 'Dim sum on Sunday is packed — book ahead. Har gow is fresh and translucent.' },
-
-    ],
-
-  },
-
-  {
-
-    id: 'r3',
-
-    name: 'Restoran Saffron Lane',
-
-    slug: 'saffron-lane',
-
-    cuisine: 'Indian Malaysian Cuisine',
-
-    city: 'Penang',
-
-    address: '88 Jalan Macalister, Georgetown, 10400 Penang',
-
-    heroImageUrl: restaurantImage('saffron-lane'),
-
-    gallery: restaurantGallery('saffron-lane'),
-
-    priceRange: 'BUDGET',
-
-    rating: 4.6,
-
-    reviewCount: 734,
-
-    openingTime: '10:00',
-
-    closingTime: '02:00',
-
-    averageSpend: 32,
-
-    trending: true,
-
-    popularityScore: 91,
-
-    amenities: ['24-hour service', 'Nasi kandar line', 'Roti canai counter', 'Late-night dining'],
-
-    dressCode: 'Casual',
-
-    parking: 'Open lot behind Jalan Macalister',
-
-    phone: '+60 4-228 7741',
-
-    email: 'info@saffronlane.my',
-
-    description:
-
-      'Penang-style nasi kandar with a rainbow of curries ladled over fragrant rice. Open late for supper crowds and Grab drivers fueling up after midnight.',
-
-    tables: [{ id: 't7', restaurantId: 'r3', label: 'S1', capacity: 4, isActive: true }],
-
-    reviews: [
-
-      { id: 'rv6', author: 'Kavitha Subramaniam', rating: 5, date: '2026-05-10', comment: 'Fish curry and ayam kurma are must-haves. Value for money even at 1am.' },
-
-    ],
-
-  },
-
-  {
-
-    id: 'r4',
-
-    name: 'Bijan Heritage',
-
-    slug: 'bijan-heritage',
-
-    cuisine: 'Nyonya Cuisine',
-
-    city: 'Kuala Lumpur',
-
-    address: '25 Changkat Bukit Bintang, 50200 Kuala Lumpur',
-
-    heroImageUrl: restaurantImage('bijan-heritage'),
-
-    gallery: restaurantGallery('bijan-heritage'),
-
+    name: 'Ginza Sora',
+    slug: 'ginza-sora',
+    cuisine: 'Japanese Kaiseki',
+    city: 'Tokyo',
+    address: '6-4-12 Ginza, Chuo City, Tokyo 104-0061, Japan',
+    heroImageUrl: restaurantImage('ginza-sora'),
+    gallery: restaurantGallery('ginza-sora'),
     priceRange: 'PREMIUM',
-
     rating: 4.9,
-
-    reviewCount: 356,
-
+    reviewCount: 684,
     openingTime: '17:30',
-
     closingTime: '23:00',
-
-    averageSpend: 125,
-
-    featured: false,
-
-    trending: true,
-
-    popularityScore: 93,
-
-    amenities: ['Peranakan tasting menu', 'Wine pairing', 'Private dining', 'Heritage decor'],
-
-    dressCode: 'Smart casual',
-
-    parking: 'Valet at Changkat Bukit Bintang',
-
-    phone: '+60 3-2144 9035',
-
-    email: 'dine@bijanheritage.my',
-
-    description:
-
-      'Refined Nyonya flavours in a restored shophouse — ayam buah keluak, otak-otak, and desserts that honour Baba-Nyonya heritage with modern plating.',
-
-    tables: [
-
-      { id: 't8', restaurantId: 'r4', label: 'B1', capacity: 2, isActive: true },
-
-      { id: 't9', restaurantId: 'r4', label: 'B2', capacity: 4, isActive: true },
-
-    ],
-
-    reviews: [
-
-      { id: 'rv7', author: 'Farid Ibrahim', rating: 5, date: '2026-05-18', comment: 'Ayam buah keluak done properly — rich, earthy, unforgettable. Perfect for special occasions.' },
-
-    ],
-
-  },
-
-  {
-
-    id: 'r5',
-
-    name: 'Tiga Rasa & Co.',
-
-    slug: 'tiga-rasa-co',
-
-    cuisine: 'Modern Malaysian Cuisine',
-
-    city: 'Johor Bahru',
-
-    address: 'Lot P1.039, Mid Valley Southkey, 81100 Johor Bahru, Johor',
-
-    heroImageUrl: restaurantImage('tiga-rasa-co'),
-
-    gallery: restaurantGallery('tiga-rasa-co'),
-
-    priceRange: 'PREMIUM',
-
-    rating: 4.8,
-
-    reviewCount: 412,
-
-    openingTime: '11:00',
-
-    closingTime: '23:00',
-
-    averageSpend: 88,
-
+    averageSpend: 95,
     featured: true,
-
-    popularityScore: 90,
-
-    amenities: ['Open kitchen', 'Craft mocktails', 'Weekend brunch', 'Mall parking'],
-
-    dressCode: 'Casual smart',
-
-    parking: 'Mid Valley Southkey multi-storey parking',
-
-    phone: '+60 7-334 2290',
-
-    email: 'book@tigarasa.my',
-
+    trending: true,
+    popularityScore: 97,
+    amenities: ['Chef counter', 'Seasonal tasting menu', 'Sake pairing', 'Private dining'],
+    dressCode: 'Smart casual',
+    parking: 'Ginza public parking and nearby hotel valet',
+    phone: '+81 3-3572-8842',
+    email: 'reserve@ginzasora.jp',
     description:
-
-      'A contemporary Malaysian kitchen celebrating the peninsula\'s three cultures — think beef rendang tacos, salted egg pasta, and teh tarik crème brûlée.',
-
+      'A polished Ginza dining room serving seasonal kaiseki courses, sake pairings, and counter seats for guests who want a close view of the kitchen.',
     tables: [
-
-      { id: 't10', restaurantId: 'r5', label: 'T1', capacity: 2, isActive: true },
-
-      { id: 't11', restaurantId: 'r5', label: 'T2', capacity: 6, isActive: true },
-
+      { id: 't1', restaurantId: 'r1', label: 'G1', capacity: 2, isActive: true },
+      { id: 't2', restaurantId: 'r1', label: 'G2', capacity: 4, isActive: true },
+      { id: 't3', restaurantId: 'r1', label: 'G3', capacity: 6, isActive: true },
     ],
-
     reviews: [
-
-      { id: 'rv8', author: 'Wei Jie Lim', rating: 5, date: '2026-05-20', comment: 'Creative menu that still feels Malaysian. The rendang tacos are genius — order two portions.' },
-
+      { id: 'rv1', author: 'Aiko Tanaka', rating: 5, date: '2026-05-12', comment: 'The spring menu was precise and calm. Service handled our overseas guests beautifully.' },
+      { id: 'rv2', author: 'Marcus Lee', rating: 5, date: '2026-05-08', comment: 'Excellent sake pairing and a smooth reservation flow for a client dinner.' },
+      { id: 'rv3', author: 'Hana Wilson', rating: 4, date: '2026-04-29', comment: 'Counter seats are worth requesting. The seafood course was the highlight.' },
     ],
-
   },
-
   {
-
-    id: 'r6',
-
-    name: 'Kopitiam Lima Dua',
-
-    slug: 'kopitiam-lima-dua',
-
-    cuisine: 'Cafe Culture',
-
-    city: 'Malacca',
-
-    address: '52 Jalan Hang Jebat, 75200 Melaka',
-
-    heroImageUrl: restaurantImage('kopitiam-lima-dua'),
-
-    gallery: restaurantGallery('kopitiam-lima-dua'),
-
-    priceRange: 'BUDGET',
-
-    rating: 4.5,
-
-    reviewCount: 278,
-
-    openingTime: '08:00',
-
-    closingTime: '18:00',
-
-    averageSpend: 36,
-
-    popularityScore: 79,
-
-    amenities: ['Kopi-o bar', 'Kaya toast', 'Heritage shophouse', 'Outdoor seating'],
-
-    dressCode: 'Casual',
-
-    parking: 'Public lot near Jonker Street',
-
-    phone: '+60 6-283 5520',
-
-    email: 'hello@kopitiam52.my',
-
+    id: 'r2',
+    name: 'Orchard Lantern',
+    slug: 'orchard-lantern',
+    cuisine: 'Modern Singaporean',
+    city: 'Singapore',
+    address: '290 Orchard Road, #04-18, Singapore 238859',
+    heroImageUrl: restaurantImage('orchard-lantern'),
+    gallery: restaurantGallery('orchard-lantern'),
+    priceRange: 'PREMIUM',
+    rating: 4.8,
+    reviewCount: 536,
+    openingTime: '11:30',
+    closingTime: '22:30',
+    averageSpend: 72,
+    featured: true,
+    trending: false,
+    popularityScore: 90,
+    amenities: ['Private rooms', 'Halal-friendly options', 'Wine list', 'Wheelchair access'],
+    dressCode: 'Smart casual',
+    parking: 'Mall parking via Orchard Road entrance',
+    phone: '+65 6732 3310',
+    email: 'hello@orchardlantern.sg',
     description:
-
-      'A restored Melaka kopitiam pouring hand-pulled kopi, charcoal-toasted kaya bread, and soft-boiled eggs — the breakfast ritual of a UNESCO heritage city.',
-
-    tables: [{ id: 't12', restaurantId: 'r6', label: 'K1', capacity: 4, isActive: true }],
-
-    reviews: [
-
-      { id: 'rv9', author: 'Siti Aminah', rating: 4, date: '2026-05-05', comment: 'Authentic old-town vibe. Kopi cham is smooth. Gets busy with tourists by 10am — come early.' },
-
+      'A contemporary Singaporean restaurant near Orchard serving laksa risotto, chili crab toast, and polished group dining for local and international guests.',
+    tables: [
+      { id: 't4', restaurantId: 'r2', label: 'O1', capacity: 2, isActive: true },
+      { id: 't5', restaurantId: 'r2', label: 'O2', capacity: 4, isActive: true },
+      { id: 't6', restaurantId: 'r2', label: 'O3', capacity: 8, isActive: true },
     ],
-
+    reviews: [
+      { id: 'rv4', author: 'Mei Lin Wong', rating: 5, date: '2026-05-15', comment: 'Great for mixed dietary needs. The team confirmed every note before we arrived.' },
+      { id: 'rv5', author: 'Daniel Kim', rating: 5, date: '2026-05-02', comment: 'Reliable service for a regional team dinner. The chili crab toast was gone in minutes.' },
+    ],
   },
-
+  {
+    id: 'r3',
+    name: 'Shibuya Noodle Lab',
+    slug: 'shibuya-noodle-lab',
+    cuisine: 'Ramen and Izakaya',
+    city: 'Tokyo',
+    address: '1-22-8 Jinnan, Shibuya City, Tokyo 150-0041, Japan',
+    heroImageUrl: restaurantImage('shibuya-noodle-lab'),
+    gallery: restaurantGallery('shibuya-noodle-lab'),
+    priceRange: 'BUDGET',
+    rating: 4.7,
+    reviewCount: 812,
+    openingTime: '11:00',
+    closingTime: '01:00',
+    averageSpend: 34,
+    trending: true,
+    popularityScore: 92,
+    amenities: ['Late-night dining', 'Counter seats', 'Vegetarian broth', 'QR ordering'],
+    dressCode: 'Casual',
+    parking: 'Coin parking near Jinnan crossing',
+    phone: '+81 3-6427-7741',
+    email: 'tables@noodlelab.jp',
+    description:
+      'A fast-moving Shibuya ramen and izakaya spot with chicken paitan, yuzu shio broth, and late-night small plates for after-work crowds.',
+    tables: [{ id: 't7', restaurantId: 'r3', label: 'S1', capacity: 4, isActive: true }],
+    reviews: [
+      { id: 'rv6', author: 'Kenji Sato', rating: 5, date: '2026-05-10', comment: 'Easy booking for a busy ramen shop. The yuzu shio bowl is clean and bright.' },
+    ],
+  },
+  {
+    id: 'r4',
+    name: 'Kyoto Garden Table',
+    slug: 'kyoto-garden-table',
+    cuisine: 'Seasonal Japanese',
+    city: 'Kyoto',
+    address: '331 Gionmachi Kitagawa, Higashiyama Ward, Kyoto 605-0073, Japan',
+    heroImageUrl: restaurantImage('kyoto-garden-table'),
+    gallery: restaurantGallery('kyoto-garden-table'),
+    priceRange: 'LUXURY',
+    rating: 4.9,
+    reviewCount: 398,
+    openingTime: '12:00',
+    closingTime: '22:00',
+    averageSpend: 118,
+    featured: false,
+    trending: true,
+    popularityScore: 94,
+    amenities: ['Garden view', 'Tea pairing', 'Anniversary service', 'Private tatami room'],
+    dressCode: 'Smart casual',
+    parking: 'Partner parking near Gion-Shijo station',
+    phone: '+81 75-561-9035',
+    email: 'dine@kyotogardentable.jp',
+    description:
+      'A Kyoto dining room pairing seasonal Japanese courses with garden views, tea service, and quiet private rooms for anniversaries and small groups.',
+    tables: [
+      { id: 't8', restaurantId: 'r4', label: 'K1', capacity: 2, isActive: true },
+      { id: 't9', restaurantId: 'r4', label: 'K2', capacity: 4, isActive: true },
+    ],
+    reviews: [
+      { id: 'rv7', author: 'Sofia Martins', rating: 5, date: '2026-05-18', comment: 'Peaceful room, thoughtful pacing, and the tea pairing made the dinner memorable.' },
+    ],
+  },
+  {
+    id: 'r5',
+    name: 'Marina Bay Claypot',
+    slug: 'marina-bay-claypot',
+    cuisine: 'Singaporean Chinese',
+    city: 'Singapore',
+    address: '8 Marina Boulevard, #02-05, Singapore 018981',
+    heroImageUrl: restaurantImage('marina-bay-claypot'),
+    gallery: restaurantGallery('marina-bay-claypot'),
+    priceRange: 'MODERATE',
+    rating: 4.8,
+    reviewCount: 477,
+    openingTime: '11:00',
+    closingTime: '23:00',
+    averageSpend: 58,
+    featured: true,
+    popularityScore: 91,
+    amenities: ['Waterfront view', 'Group tables', 'Corporate receipts', 'Weekend brunch'],
+    dressCode: 'Casual smart',
+    parking: 'Marina Bay Link Mall parking',
+    phone: '+65 6334 2290',
+    email: 'book@marinabayclaypot.sg',
+    description:
+      'A Marina Bay favorite for claypot rice, wok-fired seafood, and business-friendly group tables with a skyline view.',
+    tables: [
+      { id: 't10', restaurantId: 'r5', label: 'M1', capacity: 2, isActive: true },
+      { id: 't11', restaurantId: 'r5', label: 'M2', capacity: 6, isActive: true },
+    ],
+    reviews: [
+      { id: 'rv8', author: 'Wei Jie Lim', rating: 5, date: '2026-05-20', comment: 'Fast approval for a client lunch. Claypot rice and sambal prawns were both excellent.' },
+    ],
+  },
+  {
+    id: 'r6',
+    name: 'Osaka Commons',
+    slug: 'osaka-commons',
+    cuisine: 'Casual Japanese',
+    city: 'Osaka',
+    address: '1-6-12 Dotonbori, Chuo Ward, Osaka 542-0071, Japan',
+    heroImageUrl: restaurantImage('osaka-commons'),
+    gallery: restaurantGallery('osaka-commons'),
+    priceRange: 'MODERATE',
+    rating: 4.6,
+    reviewCount: 332,
+    openingTime: '12:00',
+    closingTime: '23:30',
+    averageSpend: 42,
+    popularityScore: 82,
+    amenities: ['Okonomiyaki counter', 'Family seating', 'English menu', 'Takeaway'],
+    dressCode: 'Casual',
+    parking: 'Namba public parking within 5 minutes',
+    phone: '+81 6-6213-5520',
+    email: 'hello@osakacommons.jp',
+    description:
+      'A relaxed Dotonbori restaurant serving okonomiyaki, kushikatsu, and Osaka comfort dishes with quick table turns and multilingual service.',
+    tables: [{ id: 't12', restaurantId: 'r6', label: 'C1', capacity: 4, isActive: true }],
+    reviews: [
+      { id: 'rv9', author: 'Mina Park', rating: 4, date: '2026-05-05', comment: 'Great casual dinner after sightseeing. Booking ahead saved us a long wait.' },
+    ],
+  },
 ];
-
-
 
 export const reservations: Reservation[] = [
-
   {
-
     id: 'res1',
-
     date: new Date().toISOString(),
-
     timeSlot: '19:00',
-
     guestCount: 4,
-
     status: 'APPROVED',
-
-    user: { name: 'Siti Aminah', email: 'guest@tablebook.dev' },
-
-    restaurant: { id: 'r1', name: 'Warung Pak Din', slug: 'warung-pak-din', city: 'Kuala Lumpur', averageSpend: 42 },
-
-    table: { id: 't2', label: 'W2', capacity: 4 },
-
+    user: { name: 'Aiko Tanaka', email: 'guest@tablebook.dev' },
+    restaurant: { id: 'r1', name: 'Ginza Sora', slug: 'ginza-sora', city: 'Tokyo', averageSpend: 95 },
+    table: { id: 't2', label: 'G2', capacity: 4 },
   },
-
   {
-
     id: 'res2',
-
     date: new Date(Date.now() + 86400000).toISOString(),
-
     timeSlot: '12:30',
-
     guestCount: 2,
-
     status: 'PENDING',
-
-    user: { name: 'Tan Wei Ming', email: 'wei.ming@example.com' },
-
-    restaurant: { id: 'r2', name: "Madam Li's Kitchen", slug: 'madam-lis-kitchen', city: 'Petaling Jaya', averageSpend: 68 },
-
-    table: { id: 't4', label: 'M1', capacity: 2 },
-
+    user: { name: 'Mei Lin Wong', email: 'mei.lin@example.com' },
+    restaurant: { id: 'r2', name: 'Orchard Lantern', slug: 'orchard-lantern', city: 'Singapore', averageSpend: 72 },
+    table: { id: 't4', label: 'O1', capacity: 2 },
   },
-
   {
-
     id: 'res3',
-
     date: new Date().toISOString(),
-
     timeSlot: '20:30',
-
     guestCount: 6,
-
     status: 'APPROVED',
-
-    user: { name: 'Priya Devi', email: 'priya@example.com' },
-
-    restaurant: { id: 'r5', name: 'Tiga Rasa & Co.', slug: 'tiga-rasa-co', city: 'Johor Bahru', averageSpend: 88 },
-
-    table: { id: 't11', label: 'T2', capacity: 6 },
-
+    user: { name: 'Daniel Kim', email: 'daniel@example.com' },
+    restaurant: { id: 'r5', name: 'Marina Bay Claypot', slug: 'marina-bay-claypot', city: 'Singapore', averageSpend: 58 },
+    table: { id: 't11', label: 'M2', capacity: 6 },
   },
-
 ];
 
-
-
 export const overview: DashboardOverview = {
-  totalReservations: 2847,
-  todaysReservations: 41,
+  totalReservations: 3184,
+  todaysReservations: 46,
   activeRestaurants: 6,
-  revenue: 186420,
-  conversionRate: 74,
-  occupancyRate: 81,
-  avgPartySize: 3.8,
+  revenue: 214680,
+  conversionRate: 76,
+  occupancyRate: 84,
+  avgPartySize: 3.7,
 };
 
 function buildMockTrends() {
-  const dayWeights = [0.72, 0.7, 0.76, 0.84, 1.08, 1.28, 1.18];
-  const seasonal = [1.1, 1.22, 0.94, 0.9, 1.06, 1.14, 0.86, 1, 0.93, 0.97, 1.04, 1.18];
+  const dayWeights = [0.72, 0.7, 0.76, 0.84, 1.1, 1.3, 1.2];
+  const seasonal = [1.04, 1.08, 1.18, 1.2, 1.05, 1.1, 0.96, 1.12, 1.0, 1.06, 1.14, 1.22];
   const anchor = new Date();
 
   return Array.from({ length: 30 }).map((_, index) => {
@@ -500,17 +258,17 @@ function buildMockTrends() {
     const dayWeight = dayWeights[(date.getDay() + 6) % 7];
     const monthWeight = seasonal[date.getMonth()];
     const wave = 0.9 + Math.sin(index / 4.5) * 0.1 + Math.cos(index / 11) * 0.06;
-    const reservations = Math.round(26 * dayWeight * monthWeight * wave);
+    const reservations = Math.round(28 * dayWeight * monthWeight * wave);
     const revenue = Math.round(
-      reservations * (58 + Math.sin(index / 3.2) * 11 + (date.getDay() >= 5 ? 14 : 0)),
+      reservations * (72 + Math.sin(index / 3.2) * 12 + (date.getDay() >= 5 ? 18 : 0)),
     );
     const occupancy = Math.min(
       96,
-      Math.round(52 + dayWeight * 18 + Math.sin(index / 2.8) * 7 + (date.getDay() >= 5 ? 8 : 0)),
+      Math.round(54 + dayWeight * 18 + Math.sin(index / 2.8) * 7 + (date.getDay() >= 5 ? 8 : 0)),
     );
 
     return {
-      date: date.toLocaleDateString('en-MY', { month: 'short', day: 'numeric' }),
+      date: date.toLocaleDateString('en-SG', { month: 'short', day: 'numeric' }),
       reservations,
       revenue,
       occupancy,
@@ -521,184 +279,111 @@ function buildMockTrends() {
 export const trends = buildMockTrends();
 
 export const popularTimes = [
-  { timeSlot: '19:00', reservations: 312 },
-  { timeSlot: '20:00', reservations: 286 },
-  { timeSlot: '19:30', reservations: 248 },
-  { timeSlot: '12:30', reservations: 214 },
-  { timeSlot: '20:30', reservations: 198 },
-  { timeSlot: '13:00', reservations: 176 },
-  { timeSlot: '18:30', reservations: 154 },
-  { timeSlot: '12:00', reservations: 132 },
-  { timeSlot: '21:00', reservations: 118 },
-  { timeSlot: '13:30', reservations: 92 },
+  { timeSlot: '19:00', reservations: 336 },
+  { timeSlot: '20:00', reservations: 304 },
+  { timeSlot: '19:30', reservations: 276 },
+  { timeSlot: '12:30', reservations: 226 },
+  { timeSlot: '20:30', reservations: 214 },
+  { timeSlot: '13:00', reservations: 188 },
+  { timeSlot: '18:30', reservations: 166 },
+  { timeSlot: '12:00', reservations: 148 },
+  { timeSlot: '21:00', reservations: 126 },
+  { timeSlot: '13:30', reservations: 98 },
 ];
 
 export const restaurantPerformance: RestaurantPerformance[] = [
-  { name: 'Warung Pak Din', reservations: 486, revenue: 20412, occupancy: 88, trend: 14.2 },
-  { name: "Madam Li's Kitchen", reservations: 421, revenue: 28628, occupancy: 82, trend: 9.1 },
-  { name: 'Bijan Heritage', reservations: 368, revenue: 46000, occupancy: 91, trend: 12.8 },
-  { name: 'Restoran Saffron Lane', reservations: 352, revenue: 11264, occupancy: 74, trend: 6.3 },
-  { name: 'Tiga Rasa & Co.', reservations: 318, revenue: 27984, occupancy: 79, trend: 11.4 },
+  { name: 'Ginza Sora', reservations: 512, revenue: 48640, occupancy: 90, trend: 15.2 },
+  { name: 'Orchard Lantern', reservations: 458, revenue: 32976, occupancy: 84, trend: 10.4 },
+  { name: 'Kyoto Garden Table', reservations: 392, revenue: 46256, occupancy: 92, trend: 13.1 },
+  { name: 'Marina Bay Claypot', reservations: 376, revenue: 21808, occupancy: 81, trend: 12.2 },
+  { name: 'Shibuya Noodle Lab', reservations: 364, revenue: 12376, occupancy: 76, trend: 7.4 },
 ];
 
 export const heatmapData = [
-  { day: 'Mon', '12': 24, '14': 18, '18': 34, '19': 46, '20': 41, '21': 22 },
-  { day: 'Tue', '12': 26, '14': 20, '18': 36, '19': 48, '20': 43, '21': 24 },
-  { day: 'Wed', '12': 28, '14': 22, '18': 40, '19': 54, '20': 49, '21': 26 },
-  { day: 'Thu', '12': 32, '14': 26, '18': 44, '19': 58, '20': 52, '21': 28 },
-  { day: 'Fri', '12': 38, '14': 30, '18': 58, '19': 82, '20': 76, '21': 44 },
-  { day: 'Sat', '12': 56, '14': 44, '18': 72, '19': 96, '20': 88, '21': 58 },
-  { day: 'Sun', '12': 52, '14': 40, '18': 66, '19': 84, '20': 74, '21': 48 },
+  { day: 'Mon', '12': 26, '14': 18, '18': 36, '19': 48, '20': 44, '21': 24 },
+  { day: 'Tue', '12': 28, '14': 20, '18': 38, '19': 50, '20': 46, '21': 26 },
+  { day: 'Wed', '12': 30, '14': 24, '18': 42, '19': 56, '20': 52, '21': 28 },
+  { day: 'Thu', '12': 34, '14': 28, '18': 48, '19': 62, '20': 56, '21': 30 },
+  { day: 'Fri', '12': 42, '14': 32, '18': 62, '19': 86, '20': 80, '21': 48 },
+  { day: 'Sat', '12': 58, '14': 46, '18': 76, '19': 98, '20': 92, '21': 60 },
+  { day: 'Sun', '12': 54, '14': 42, '18': 68, '19': 86, '20': 78, '21': 50 },
 ];
-
-
 
 export const liveActivity = [
-
-  { id: '1', text: 'Siti Aminah booked Warung Pak Din for 4 guests at 19:00', time: '2m ago', type: 'booking' },
-
-  { id: '2', text: "Madam Li's Kitchen — Table M2 approved for lunch", time: '5m ago', type: 'approval' },
-
-  { id: '3', text: 'Bijan Heritage reached 89% occupancy for Saturday dinner', time: '12m ago', type: 'alert' },
-
-  { id: '4', text: 'Tan Wei Ming requested halal seating at Madam Li\'s Kitchen', time: '18m ago', type: 'note' },
-
-  { id: '5', text: 'Tiga Rasa & Co. trending +18% this week in Johor Bahru', time: '32m ago', type: 'trend' },
-
+  { id: '1', text: 'Aiko Tanaka booked Ginza Sora for 4 guests at 19:00', time: '2m ago', type: 'booking' },
+  { id: '2', text: 'Orchard Lantern - Table O2 approved for lunch', time: '5m ago', type: 'approval' },
+  { id: '3', text: 'Kyoto Garden Table reached 91% occupancy for Saturday dinner', time: '12m ago', type: 'alert' },
+  { id: '4', text: 'Mei Lin Wong requested a halal-friendly menu at Orchard Lantern', time: '18m ago', type: 'note' },
+  { id: '5', text: 'Marina Bay Claypot trending +19% this week in Singapore', time: '32m ago', type: 'trend' },
 ];
 
-
-
-export const trustLogos = ['Grab', 'Foodpanda', 'Stripe', 'iPay88', 'Boost', 'Touch n Go'];
-
-
+export const trustLogos = ['Stripe', 'Vercel', 'Google Maps', 'LINE', 'Grab', 'PayNow'];
 
 export const aiInsights: AiInsight[] = [
-
   {
-
     id: 'ai1',
-
     category: 'peak-times',
-
-    title: 'Friday 7–8 PM is your highest-conversion window',
-
-    summary: '72% of approved reservations cluster between 19:00–20:00 on Fridays across KL and JB venues.',
-
-    detail: 'Friday dinner service drives 36% of weekly revenue. Warung Pak Din and Bijan Heritage show the strongest conversion during this window. Consider table holds and SMS reminders for peak slots — especially before public holidays.',
-
+    title: 'Friday 7-8 PM is your highest-conversion window',
+    summary: '74% of approved reservations cluster between 19:00-20:00 on Fridays across Tokyo and Singapore venues.',
+    detail: 'Friday dinner service drives 38% of weekly revenue. Ginza Sora and Marina Bay Claypot show the strongest conversion during this window. Consider table holds and automated reminders for peak slots before long weekends.',
     confidence: 92,
-
     impact: 'high',
-
   },
-
   {
-
     id: 'ai2',
-
     category: 'behavior',
-
-    title: 'Guests booking 3+ days ahead spend 24% more',
-
+    title: 'Guests booking 3+ days ahead spend 22% more',
     summary: 'Advance planners select premium tables and add occasion notes more often.',
-
-    detail: 'Party sizes average 4.1 for advance bookings vs 2.8 for same-day — common for family makan sessions. These guests prefer private rooms and window seating. Target them with WhatsApp confirmation and festive upsells before Hari Raya and CNY.',
-
+    detail: 'Party sizes average 4.0 for advance bookings vs 2.7 for same-day bookings. These guests prefer private rooms, counter seats, and dietary confirmations. Target them with email or LINE confirmation before arrival.',
     confidence: 87,
-
     impact: 'medium',
-
   },
-
   {
-
     id: 'ai3',
-
     category: 'performance',
-
-    title: 'Bijan Heritage leads revenue per seat',
-
-    summary: 'RM 125 average spend with 89% occupancy — top performer this month.',
-
-    detail: 'Bijan Heritage converts 13% more reservations than portfolio average. Warung Pak Din leads on total covers. Restoran Saffron Lane shows strong late-night demand in Penang — consider extending kitchen hours on weekends.',
-
+    title: 'Kyoto Garden Table leads revenue per seat',
+    summary: 'US$118 average spend with 90% occupancy - top performer this month.',
+    detail: 'Kyoto Garden Table converts 14% more reservations than the portfolio average. Ginza Sora leads on total covers, while Shibuya Noodle Lab shows strong late-night demand in Tokyo.',
     confidence: 94,
-
     impact: 'high',
-
   },
-
   {
-
     id: 'ai4',
-
     category: 'prediction',
-
-    title: 'Saturday Jun 21 projected at 92% capacity',
-
-    summary: 'Based on 4-week trends, expect near-sellout across premium venues before the school holidays.',
-
-    detail: 'Kuala Lumpur and Johor Bahru venues are pacing 16% above last month. Recommend opening overflow seating at Madam Li\'s Kitchen and pre-staffing Bijan Heritage for the 19:00–20:30 dinner rush.',
-
-    confidence: 81,
-
+    title: 'Saturday demand projected at 93% capacity',
+    summary: 'Based on 4-week trends, expect near-sellout across premium venues before the weekend dinner rush.',
+    detail: 'Tokyo and Singapore venues are pacing 17% above last month. Recommend opening overflow seating at Orchard Lantern and pre-staffing Ginza Sora for the 19:00-20:30 dinner rush.',
+    confidence: 82,
     impact: 'high',
-
   },
-
   {
-
     id: 'ai5',
-
     category: 'recommendation',
-
-    title: 'Enable waitlist for Kopitiam Lima Dua weekend brunch',
-
-    summary: 'Weekend 09:00–11:00 slots fill 2.8× faster than weekday mornings.',
-
-    detail: 'Heritage breakfast slots at Kopitiam Lima Dua have 94% fill rate within 48 hours of release. A waitlist with SMS notifications could recover an estimated 10–14 additional covers per weekend — especially during Melaka tourist peak season.',
-
-    confidence: 78,
-
+    title: 'Enable waitlist for Osaka Commons weekend lunch',
+    summary: 'Weekend 12:00-13:30 slots fill 2.6x faster than weekday lunches.',
+    detail: 'Casual Osaka lunch slots reach 92% fill rate within 48 hours of release. A waitlist with SMS or email notifications could recover an estimated 12-16 covers per weekend.',
+    confidence: 79,
     impact: 'medium',
-
   },
-
 ];
 
-
-
 export function getAvailability(slug: string): TimeSlotAvailability[] {
-
   const slots = [
-
     '11:00', '11:30', '12:00', '12:30', '13:00',
-
     '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00',
-
   ];
 
   const seed = slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
 
   return slots.map((time, i) => {
-
     const busy = (seed + i * 7) % 10;
-
     const popularity = busy > 7 ? 'peak' : busy > 5 ? 'high' : busy > 3 ? 'medium' : 'low';
-
     const available = busy < 8;
-
     return { time, available, popularity, tablesLeft: available ? Math.max(1, 6 - (busy % 5)) : 0 };
-
   });
-
 }
 
-
-
 export function enrichRestaurant(restaurant: Restaurant): Restaurant {
-
   const full = restaurants.find((r) => r.slug === restaurant.slug);
 
   return full
@@ -716,6 +401,4 @@ export function enrichRestaurant(restaurant: Restaurant): Restaurant {
         tables: full.tables ?? restaurant.tables,
       }
     : restaurant;
-
 }
-

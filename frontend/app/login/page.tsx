@@ -29,11 +29,11 @@ export default function LoginPage() {
         <p className="text-lg font-semibold text-white">TableBook</p>
         <div>
           <blockquote className="text-2xl font-medium leading-relaxed text-white/90">
-            &ldquo;We cut reservation handling time in half and finally have visibility into peak makan hours across our outlets.&rdquo;
+            &ldquo;We cut reservation handling time in half and finally have visibility into peak dinner hours across our Tokyo and Singapore venues.&rdquo;
           </blockquote>
-          <p className="mt-4 text-sm text-[#a3b4c6]">— Operations lead, Klang Valley restaurant group</p>
+          <p className="mt-4 text-sm text-[#a3b4c6]">Operations lead, regional restaurant group</p>
         </div>
-        <p className="text-xs text-[#697386]">© TableBook</p>
+        <p className="text-xs text-[#697386]">Copyright TableBook</p>
       </div>
 
       <main className="flex items-center justify-center px-5 py-12">
@@ -54,7 +54,7 @@ export default function LoginPage() {
             </div>
             <div>
               <label className="mb-1.5 block text-sm font-medium text-[#0a2540]">Password</label>
-              <Input type="password" placeholder="••••••••" {...form.register('password')} />
+              <Input type="password" placeholder="Password" {...form.register('password')} />
             </div>
             <Button className="w-full" type="submit">Continue</Button>
           </form>

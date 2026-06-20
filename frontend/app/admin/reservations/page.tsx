@@ -28,7 +28,7 @@ export default function AdminReservationsPage() {
                 </Badge>
               </div>
               <p className="mt-1 text-sm text-[#697386]">
-                {reservation.user?.name} · {new Date(reservation.date).toLocaleDateString('en-MY')} at {reservation.timeSlot} · {reservation.guestCount} guests
+                {reservation.user?.name} - {new Date(reservation.date).toLocaleDateString('en-SG')} at {reservation.timeSlot} - {reservation.guestCount} guests
               </p>
             </div>
             <div className="flex gap-2">

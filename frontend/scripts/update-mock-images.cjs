@@ -9,7 +9,7 @@ content = content.replace(
   '',
 );
 
-if (!content.includes("restaurant-images")) {
+if (!content.includes('restaurant-images')) {
   content = content.replace(
     "} from '@/types/tablebook';",
     "} from '@/types/tablebook';\nimport { restaurantGallery, restaurantImage } from '@/lib/restaurant-images';",
@@ -17,12 +17,12 @@ if (!content.includes("restaurant-images")) {
 }
 
 const restaurants = [
-  'warung-pak-din',
-  'madam-lis-kitchen',
-  'saffron-lane',
-  'bijan-heritage',
-  'tiga-rasa-co',
-  'kopitiam-lima-dua',
+  'ginza-sora',
+  'orchard-lantern',
+  'shibuya-noodle-lab',
+  'kyoto-garden-table',
+  'marina-bay-claypot',
+  'osaka-commons',
 ];
 
 for (const slug of restaurants) {

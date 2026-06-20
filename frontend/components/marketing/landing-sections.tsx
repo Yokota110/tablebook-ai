@@ -11,12 +11,12 @@ export function LandingHero() {
     <section className="hero-surface border-b border-[#e6ebf1]">
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:py-28">
         <div>
-          <p className="eyebrow">Malaysia&apos;s restaurant reservation platform</p>
+          <p className="eyebrow">Global reservations for Japan and Singapore</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-[#0a2540] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
             Fill every seat. Run every service with confidence.
           </h1>
           <p className="mt-5 max-w-lg text-lg leading-7 text-[#425466]">
-            TableBook connects guest discovery, table management, and revenue analytics — built for Malaysian operators from KL kopitiams to Penang mamak stalls.
+            TableBook connects guest discovery, table management, and revenue analytics for modern restaurant groups across Tokyo, Kyoto, Osaka, and Singapore.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -46,7 +46,7 @@ export function LandingHero() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-[#697386]">Gross volume</p>
-                  <p className="text-2xl font-semibold text-[#0a2540]">RM {overview.revenue.toLocaleString('en-MY')}</p>
+                  <p className="text-2xl font-semibold text-[#0a2540]">US$ {overview.revenue.toLocaleString('en-SG')}</p>
                 </div>
                 <span className="rounded-md bg-[#e8f8ef] px-2 py-1 text-xs font-medium text-[#09825d]">+18.4%</span>
               </div>
@@ -79,7 +79,7 @@ export function LandingHero() {
               </div>
               <div>
                 <p className="text-sm font-medium text-[#0a2540]">{restaurants[0].name}</p>
-                <p className="text-xs text-[#697386]">4 guests · 19:00 · Kuala Lumpur</p>
+                <p className="text-xs text-[#697386]">4 guests - 19:00 - Tokyo</p>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ export function LandingOwnerBenefits() {
             {[
               ['34%', 'Higher peak-hour utilization'],
               ['72%', 'First-touch approval rate'],
-              ['2.4×', 'Faster reservation handling'],
+              ['2.4x', 'Faster reservation handling'],
               ['18%', 'Revenue lift in 90 days'],
             ].map(([v, l]) => (
               <div key={l} className="rounded-xl border border-[#e6ebf1] bg-white p-6">
@@ -157,7 +157,7 @@ export function LandingOwnerBenefits() {
 
 export function LandingTrust() {
   const metrics = [
-    ['5', 'Cities'],
+    ['4', 'Cities'],
     ['180+', 'Tables managed'],
     ['99.9%', 'Uptime SLA'],
     ['<2min', 'Avg. approval time'],
@@ -166,7 +166,7 @@ export function LandingTrust() {
   return (
     <section className="border-y border-[#e6ebf1] bg-[#f6f9fc] py-14">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <p className="text-center text-sm text-[#697386]">Trusted by restaurant groups across Peninsular Malaysia</p>
+        <p className="text-center text-sm text-[#697386]">Trusted by restaurant groups across Japan and Singapore</p>
         <dl className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
           {metrics.map(([val, label]) => (
             <div key={label} className="text-center">

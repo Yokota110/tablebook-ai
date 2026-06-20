@@ -42,7 +42,7 @@ export default function ReservationsPage() {
                       <Badge>{reservation.status}</Badge>
                     </div>
                     <p className="mt-2 text-sm text-slate-500">
-                      {new Date(reservation.date).toLocaleDateString('en-MY')} at {reservation.timeSlot} · {reservation.guestCount} guests · Table {reservation.table.label}
+                      {new Date(reservation.date).toLocaleDateString('en-SG')} at {reservation.timeSlot} - {reservation.guestCount} guests - Table {reservation.table.label}
                     </p>
                   </div>
                   <Button

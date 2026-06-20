@@ -24,7 +24,7 @@ export default function Home() {
           <div className="mb-10 flex items-end justify-between gap-4">
             <div>
               <p className="eyebrow">Featured venues</p>
-              <h2 className="section-title mt-2">Popular restaurants across Malaysia</h2>
+              <h2 className="section-title mt-2">Popular restaurants across Japan and Singapore</h2>
             </div>
             <Button asChild variant="outline">
               <Link href="/restaurants">View all</Link>

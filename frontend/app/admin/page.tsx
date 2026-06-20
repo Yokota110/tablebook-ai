@@ -45,9 +45,9 @@ export default function AdminDashboardPage() {
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           <KpiCard title="Total reservations" numericValue={overview.data.totalReservations} suffix="+" change="+12.8% from prior period" trend="up" icon={CalendarDays} />
           <KpiCard title="Today's covers" numericValue={overview.data.todaysReservations} change="Peak expected 19:00" trend="up" icon={TrendingUp} />
-          <KpiCard title="Gross volume" numericValue={overview.data.revenue} prefix="RM " change="+18.4% from prior period" trend="up" icon={Banknote} />
+          <KpiCard title="Gross volume" numericValue={overview.data.revenue} prefix="US$ " change="+18.4% from prior period" trend="up" icon={Banknote} />
           <KpiCard title="Occupancy" numericValue={overview.data.occupancyRate ?? 0} suffix="%" change={`${overview.data.conversionRate}% approval rate`} trend="neutral" icon={Percent} />
-          <KpiCard title="Active venues" value={String(overview.data.activeRestaurants)} change="6 cities across Malaysia" trend="neutral" icon={Utensils} />
+          <KpiCard title="Active venues" value={String(overview.data.activeRestaurants)} change="Tokyo, Kyoto, Osaka, Singapore" trend="neutral" icon={Utensils} />
           <KpiCard title="Avg. party size" numericValue={overview.data.avgPartySize ?? 0} decimals={1} change="Advance bookings trending up" trend="up" icon={Users} />
         </div>
       )}
@@ -118,7 +118,7 @@ export default function AdminDashboardPage() {
                   <tr key={r.id} className="hover:bg-[#f6f9fc]/50">
                     <td className="px-5 py-3.5 font-medium text-[#0a2540]">{r.user?.name ?? 'Guest'}</td>
                     <td className="px-5 py-3.5 text-[#425466]">{r.restaurant.name}</td>
-                    <td className="px-5 py-3.5 text-[#425466]">{new Date(r.date).toLocaleDateString('en-MY')} · {r.timeSlot}</td>
+                    <td className="px-5 py-3.5 text-[#425466]">{new Date(r.date).toLocaleDateString('en-SG')} - {r.timeSlot}</td>
                     <td className="px-5 py-3.5 text-[#425466]">{r.guestCount}</td>
                     <td className="px-5 py-3.5">
                       <Badge variant={r.status === 'APPROVED' ? 'success' : r.status === 'PENDING' ? 'warning' : 'default'}>

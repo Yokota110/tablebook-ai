@@ -90,7 +90,7 @@ export default function RestaurantsPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-600">Discovery</p>
             <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950">Find your next table</h1>
             <p className="mt-3 max-w-2xl text-slate-600">
-              Search Malaysian restaurants across Kuala Lumpur, Penang, Johor Bahru, and more — filter by cuisine, city, price, and ratings.
+              Search restaurants across Tokyo, Kyoto, Osaka, and Singapore. Filter by cuisine, city, price, and ratings.
             </p>
             <div className="relative mt-7 max-w-xl">
               <Search className="absolute left-4 top-3.5 h-4 w-4 text-slate-400" />

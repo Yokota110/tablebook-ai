@@ -3,12 +3,12 @@ const path = require('path');
 
 const dir = path.join(__dirname, '../public/images/restaurants');
 const restaurants = [
-  { slug: 'warung-pak-din', name: 'Warung Pak Din', sub: 'Malay Cuisine · Kuala Lumpur', tag: 'Nasi Lemak · Sambal · Ayam Percik', c1: '#1B7D4E', c2: '#F4C430' },
-  { slug: 'madam-lis-kitchen', name: "Madam Li's Kitchen", sub: 'Chinese Malaysian · Petaling Jaya', tag: 'Dim Sum · Curry Laksa · Butter Prawns', c1: '#C41E3A', c2: '#FFD700' },
-  { slug: 'saffron-lane', name: 'Restoran Saffron Lane', sub: 'Indian Malaysian · Penang', tag: 'Nasi Kandar · Roti Canai · Fish Curry', c1: '#E87722', c2: '#F9C74F' },
-  { slug: 'bijan-heritage', name: 'Bijan Heritage', sub: 'Nyonya Cuisine · Kuala Lumpur', tag: 'Ayam Buah Keluak · Otak-Otak', c1: '#2D6A6A', c2: '#E8A87C' },
-  { slug: 'tiga-rasa-co', name: 'Tiga Rasa & Co.', sub: 'Modern Malaysian · Johor Bahru', tag: 'Rendang Tacos · Teh Tarik Brulee', c1: '#0a2540', c2: '#8B5CF6' },
-  { slug: 'kopitiam-lima-dua', name: 'Kopitiam Lima Dua', sub: 'Cafe Culture · Malacca', tag: 'Kopi-O · Kaya Toast · Soft Eggs', c1: '#6F4E37', c2: '#D4A574' },
+  { slug: 'ginza-sora', name: 'Ginza Sora', sub: 'Japanese Kaiseki - Tokyo', tag: 'Seasonal Courses - Sake Pairing', c1: '#0a2540', c2: '#D97706' },
+  { slug: 'orchard-lantern', name: 'Orchard Lantern', sub: 'Modern Singaporean - Singapore', tag: 'Laksa Risotto - Chili Crab Toast', c1: '#0F766E', c2: '#F97316' },
+  { slug: 'shibuya-noodle-lab', name: 'Shibuya Noodle Lab', sub: 'Ramen and Izakaya - Tokyo', tag: 'Yuzu Shio - Late Night Plates', c1: '#7C2D12', c2: '#FACC15' },
+  { slug: 'kyoto-garden-table', name: 'Kyoto Garden Table', sub: 'Seasonal Japanese - Kyoto', tag: 'Garden View - Tea Pairing', c1: '#14532D', c2: '#A7F3D0' },
+  { slug: 'marina-bay-claypot', name: 'Marina Bay Claypot', sub: 'Singaporean Chinese - Singapore', tag: 'Claypot Rice - Wok Seafood', c1: '#1D4ED8', c2: '#38BDF8' },
+  { slug: 'osaka-commons', name: 'Osaka Commons', sub: 'Casual Japanese - Osaka', tag: 'Okonomiyaki - Kushikatsu', c1: '#7F1D1D', c2: '#FCA5A5' },
 ];
 
 const variants = [

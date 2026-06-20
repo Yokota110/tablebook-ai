@@ -1,65 +1,55 @@
-# 🍽️ TableBook
+# TableBook
 
-Modern Restaurant Reservation Platform built with Next.js, NestJS, PostgreSQL and AWS.
+Modern restaurant reservation platform for global restaurant groups, focused on Japan and Singapore demo markets.
 
-A production-style full-stack SaaS application that enables customers to discover restaurants, make reservations online, and provides restaurant operators with reservation analytics and management tools.
+TableBook is a production-style full-stack SaaS application that helps customers discover restaurants, reserve tables online, and gives restaurant operators analytics, table management, and reservation workflows.
 
----
+## Live Demo
 
-## 🚀 Live Demo
+Coming soon.
 
-Coming Soon
+## Overview
 
----
+TableBook is inspired by restaurant booking products such as OpenTable and Resy. The current demo environment uses restaurants, guest behavior, analytics, dates, and currency copy tailored around Tokyo, Kyoto, Osaka, and Singapore.
 
-## 📋 Overview
+The project demonstrates modern full-stack development with Next.js, NestJS, PostgreSQL, Prisma, TypeScript, Docker, and AWS-ready architecture.
 
-TableBook is a modern restaurant reservation platform inspired by products such as OpenTable and Resy.
+## Features
 
-The platform allows customers to browse restaurants, check availability, and make reservations while providing operators with analytics dashboards, reservation management workflows, and business insights.
+### Customer
 
-The project was built as a portfolio-quality SaaS application demonstrating modern full-stack development practices using React, Next.js, NestJS, PostgreSQL, and AWS.
-
----
-
-## ✨ Features
-
-### Customer Features
-
-- User Authentication
-- Restaurant Discovery
-- Advanced Search & Filtering
-- Restaurant Details
-- Restaurant Galleries
-- Real-time Availability Display
-- Online Reservations
-- Reservation History
-- Reservation Cancellation
+- User authentication
+- Restaurant discovery
+- Search and filtering
+- Restaurant details and galleries
+- Real-time availability display
+- Online reservations
+- Reservation history
+- Reservation cancellation
 
 ### Restaurant Experience
 
-- Malaysian Restaurant Dataset
-- Cuisine Filtering
-- City Filtering
-- Price Range Filtering
-- Rating Filtering
-- Popular Time Indicators
-- Recommended Reservation Slots
-- Amenities & Service Information
+- Japan and Singapore restaurant dataset
+- Cuisine filtering
+- City filtering
+- Price range filtering
+- Rating filtering
+- Popular time indicators
+- Recommended reservation slots
+- Amenities and service information
 
-### Operator Features
+### Operator
 
-- Reservation Management
-- Restaurant Management
-- Table Management
-- Analytics Dashboard
-- Occupancy Tracking
-- Peak Hour Analysis
-- Revenue Monitoring
+- Reservation management
+- Restaurant management
+- Table management
+- Analytics dashboard
+- Occupancy tracking
+- Peak hour analysis
+- Revenue monitoring
+- AI-style business insights
 
----
-
-## 🖼 Screenshots
+## Screenshots
 
 ### Landing Page
 
@@ -77,9 +67,7 @@ The project was built as a portfolio-quality SaaS application demonstrating mode
 
 ![Analytics Dashboard](docs/admin-dashboard.png)
 
----
-
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -87,7 +75,7 @@ The project was built as a portfolio-quality SaaS application demonstrating mode
 - React
 - TypeScript
 - Tailwind CSS
-- shadcn/ui
+- shadcn/ui-style components
 - TanStack Query
 - React Hook Form
 - Zod
@@ -104,71 +92,36 @@ The project was built as a portfolio-quality SaaS application demonstrating mode
 
 ### Infrastructure
 
-- AWS EC2
-- AWS RDS
-- AWS S3
-- CloudFront
+- Docker Compose for local services
+- AWS-ready backend architecture
+- Vercel-ready frontend deployment
 
-### Authentication
-
-- JWT Authentication
-- Refresh Tokens
-- Role-Based Access Control
-
----
-
-## 🏗 Architecture
+## Architecture
 
 ```text
 Frontend (Next.js)
-
-       ↓
-
-REST API
-
-       ↓
-
-Backend (NestJS)
-
-       ↓
-
-PostgreSQL Database
-
-       ↓
-
-AWS Infrastructure
+  -> REST API
+  -> Backend (NestJS)
+  -> PostgreSQL
 ```
 
----
-
-## 📂 Folder Structure
+## Folder Structure
 
 ```text
-tablebook
-│
-├── frontend
-│   ├── src
-│   ├── components
-│   ├── app
-│   └── lib
-│
-├── backend
-│   ├── src
-│   ├── prisma
-│   └── test
-│
-├── docs
-│   ├── landing-page.png
-│   ├── restaurant-discovery.png
-│   ├── restaurant-detail.png
-│   └── admin-dashboard.png
-│
-└── README.md
+table-book
+  frontend/
+    app/
+    components/
+    lib/
+    public/
+  backend/
+    prisma/
+    src/
+    test/
+  docs/
 ```
 
----
-
-## ⚙️ Installation
+## Installation
 
 Clone the repository:
 
@@ -180,9 +133,7 @@ git clone https://github.com/Yokota110/tablebook-ai.git
 
 ```bash
 cd frontend
-
 npm install
-
 npm run dev
 ```
 
@@ -190,20 +141,16 @@ npm run dev
 
 ```bash
 cd backend
-
 npm install
-
 npm run start:dev
 ```
 
----
-
-## 🔑 Environment Variables
+## Environment Variables
 
 ### Frontend
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3001
+NEXT_PUBLIC_API_URL=http://localhost:4000/api
 ```
 
 ### Backend
@@ -211,94 +158,56 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 ```env
 DATABASE_URL=
 JWT_SECRET=
-
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 AWS_REGION=
 AWS_S3_BUCKET=
 ```
 
----
-
-## 🗄 Database
+## Database
 
 Main entities:
 
-### Users
+- Users
+- Restaurants
+- Tables
+- Reservations
 
-- Authentication
-- Customer Profiles
-- Operator Accounts
+## Localization
 
-### Restaurants
-
-- Restaurant Information
-- Cuisine Types
-- Location Data
-
-### Tables
-
-- Capacity
-- Availability
-- Reservation Assignment
-
-### Reservations
-
-- Booking Details
-- Status Tracking
-- Guest Management
-
----
-
-## 📊 Business Analytics
-
-The operator dashboard provides:
-
-- Reservation Trends
-- Revenue Tracking
-- Occupancy Monitoring
-- Peak Hour Heatmaps
-- Popular Reservation Times
-- Restaurant Performance Metrics
-
----
-
-## 🌏 Localization
-
-The project includes Malaysian-inspired restaurant data and business workflows.
+The project includes Japan and Singapore focused restaurant data and business workflows.
 
 Examples:
 
-- Kuala Lumpur
-- Johor Bahru
-- Penang
-- Nyonya Cuisine
-- Malaysian Dining Concepts
+- Tokyo
+- Kyoto
+- Osaka
+- Singapore
+- Japanese Kaiseki
+- Ramen and Izakaya
+- Modern Singaporean
+- Singaporean Chinese
 
-Currency:
+Currency display:
 
 ```text
-MYR (RM)
+USD (US$)
 ```
 
----
+## Future Improvements
 
-## 🎯 Future Improvements
+- AI restaurant insights
+- OpenAI integration
+- Email notifications
+- Payment integration
+- Mobile application
+- Multi-branch management
+- Customer loyalty program
 
-- AI Restaurant Insights
-- OpenAI Integration
-- Email Notifications
-- Payment Integration
-- Mobile Application
-- Multi-Branch Management
-- Customer Loyalty Program
+## Author
 
----
-
-## 👨‍💻 Author
-
-**横田 伊春 (Yokota Ishun)**  
-Freelance Full Stack Developer · Shiki, Saitama, Japan
+**Yokota Ishun**  
+Freelance Full Stack Developer, Shiki, Saitama, Japan
 
 After building enterprise web systems and React/Node.js SaaS platforms at Neusoft and Neusoft Reach in China, I have worked as a freelance developer in Japan since 2023, delivering web applications with Next.js, NestJS, PostgreSQL, and AWS.
 
@@ -307,10 +216,6 @@ TableBook is a portfolio project showcasing modern full-stack SaaS development w
 - **Email:** [richunyokota93@gmail.com](mailto:richunyokota93@gmail.com)
 - **GitHub:** [Yokota110/tablebook-ai](https://github.com/Yokota110/tablebook-ai)
 
-**Tech Stack:** TypeScript, React, Next.js, NestJS, PostgreSQL, AWS, Docker
-
----
-
-## 📄 License
+## License
 
 This project was created for portfolio and educational purposes by Yokota Ishun.

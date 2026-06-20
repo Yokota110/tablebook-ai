@@ -14,7 +14,7 @@ export function SiteFooter() {
               <span className="font-semibold text-[#0a2540]">TableBook</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-6 text-[#697386]">
-              Reservation infrastructure for Malaysian restaurants. Discovery, booking, and operations in one platform.
+              Reservation infrastructure for global restaurant groups in Japan and Singapore. Discovery, booking, and operations in one platform.
             </p>
           </div>
           <div>
@@ -34,8 +34,8 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-[#e6ebf1] pt-8 text-xs text-[#8898aa] sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} TableBook Sdn. Bhd.</p>
-          <p>Kuala Lumpur · Penang · Johor Bahru · Melaka</p>
+          <p>Copyright {new Date().getFullYear()} TableBook Global</p>
+          <p>Tokyo - Kyoto - Osaka - Singapore</p>
         </div>
       </div>
     </footer>

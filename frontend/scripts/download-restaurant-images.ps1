@@ -1,11 +1,11 @@
-$dir = "e:\Friend\frontend\public\images\restaurants"
+$dir = Join-Path $PSScriptRoot '..\public\images\restaurants'
 $restaurants = @(
-  @{ slug = 'warung-pak-din'; tags = 'food,asian,rice' },
-  @{ slug = 'madam-lis-kitchen'; tags = 'chinese,food,dining' },
-  @{ slug = 'saffron-lane'; tags = 'indian,curry,food' },
-  @{ slug = 'bijan-heritage'; tags = 'food,asian,dining' },
-  @{ slug = 'tiga-rasa-co'; tags = 'restaurant,food,plate' },
-  @{ slug = 'kopitiam-lima-dua'; tags = 'coffee,cafe,food' }
+  @{ slug = 'ginza-sora'; tags = 'japanese,kaiseki,restaurant' },
+  @{ slug = 'orchard-lantern'; tags = 'singapore,restaurant,food' },
+  @{ slug = 'shibuya-noodle-lab'; tags = 'ramen,japanese,food' },
+  @{ slug = 'kyoto-garden-table'; tags = 'kyoto,japanese,restaurant' },
+  @{ slug = 'marina-bay-claypot'; tags = 'singapore,chinese,food' },
+  @{ slug = 'osaka-commons'; tags = 'osaka,japanese,food' }
 )
 
 foreach ($r in $restaurants) {

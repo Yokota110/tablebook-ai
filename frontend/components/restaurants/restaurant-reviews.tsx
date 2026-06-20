@@ -47,7 +47,7 @@ export function RestaurantReviews({ reviews, rating, reviewCount }: { reviews: R
                   </div>
                   <div>
                     <p className="font-semibold text-slate-950">{review.author}</p>
-                    <p className="text-xs text-slate-400">{new Date(review.date).toLocaleDateString('en-MY', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                    <p className="text-xs text-slate-400">{new Date(review.date).toLocaleDateString('en-SG', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                   </div>
                 </div>
                 <div className="flex gap-0.5">

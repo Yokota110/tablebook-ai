@@ -18,23 +18,23 @@ const DAY_OF_WEEK_WEIGHTS: Record<number, number> = {
   2: 0.7, // Tue
   3: 0.76, // Wed
   4: 0.84, // Thu
-  5: 1.08, // Fri
-  6: 1.28, // Sat
+  5: 1.1, // Fri
+  6: 1.3, // Sat
 };
 
 const SEASONAL_BY_MONTH: Record<number, number> = {
-  1: 1.1,
-  2: 1.22,
-  3: 0.94,
-  4: 0.9,
-  5: 1.06,
-  6: 1.14,
-  7: 0.86,
-  8: 1.0,
-  9: 0.93,
-  10: 0.97,
-  11: 1.04,
-  12: 1.18,
+  1: 1.04,
+  2: 1.08,
+  3: 1.18,
+  4: 1.2,
+  5: 1.05,
+  6: 1.1,
+  7: 0.96,
+  8: 1.12,
+  9: 1.0,
+  10: 1.06,
+  11: 1.14,
+  12: 1.22,
 };
 
 const TIME_SLOTS = [
@@ -58,11 +58,11 @@ const GUEST_COUNTS = [2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 8];
 const GUEST_WEIGHTS = [18, 16, 14, 12, 15, 10, 8, 7, 5, 4, 3, 2];
 
 const reservationNotes = [
-  'Prefer halal seating section if available.',
-  'Family makan — celebrating parents\' anniversary.',
+  'Prefer a halal-friendly menu if available.',
+  'Family dinner celebrating parents\' anniversary.',
   'Need high chair for toddler.',
   'Window seat if possible, celebrating birthday.',
-  'Corporate team lunch — need receipt.',
+  'Corporate team lunch - need receipt.',
   'Allergic to shellfish, please note for kitchen.',
 ];
 
@@ -155,7 +155,7 @@ export function buildAnalyticsReservations({
     const lunchBoost = weekend ? 1.35 : 1;
     const dinnerBoost = date.getDay() === 5 || date.getDay() === 6 ? 1.28 : 1;
     const wave = 0.88 + Math.sin(dayOffset / 5.5) * 0.08 + Math.cos(dayOffset / 17) * 0.05;
-    const portfolioTarget = Math.round(24 * dayWeight * seasonalWeight * wave);
+    const portfolioTarget = Math.round(25 * dayWeight * seasonalWeight * wave);
 
     for (const restaurant of restaurants) {
       const tables = tablesByRestaurant.get(restaurant.id) ?? [];

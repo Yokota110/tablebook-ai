@@ -31,12 +31,12 @@ export default function RegisterPage() {
         <p className="max-w-sm text-lg leading-relaxed text-[#a3b4c6]">
           Create an account to book tables, manage reservations, and receive confirmations instantly.
         </p>
-        <p className="text-xs text-[#697386]">© TableBook</p>
+        <p className="text-xs text-[#697386]">Copyright TableBook</p>
       </div>
       <main className="flex items-center justify-center px-5 py-12">
         <div className="w-full max-w-sm">
           <h1 className="text-2xl font-semibold text-[#0a2540]">Create account</h1>
-          <p className="mt-2 text-sm text-[#697386]">Start booking at restaurants across Malaysia.</p>
+          <p className="mt-2 text-sm text-[#697386]">Start booking at restaurants across Japan and Singapore.</p>
           <form
             className="mt-8 space-y-4"
             onSubmit={form.handleSubmit(async (values) => {

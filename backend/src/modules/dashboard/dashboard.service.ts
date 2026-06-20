@@ -12,7 +12,7 @@ export class DashboardService {
   constructor(private readonly prisma: PrismaService) {}
 
   private formatTrendDate(date: Date) {
-    return date.toLocaleDateString('en-MY', { month: 'short', day: 'numeric' });
+    return date.toLocaleDateString('en-SG', { month: 'short', day: 'numeric' });
   }
 
   private reservationRevenue(

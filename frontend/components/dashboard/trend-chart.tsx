@@ -45,7 +45,7 @@ export function TrendChart({
                 contentStyle={{ borderRadius: 16, border: '1px solid #E2E8F0', boxShadow: '0 8px 30px rgba(0,0,0,0.08)' }}
               />
               <Area type="monotone" dataKey="reservations" stroke="#0EA5E9" fill="url(#resGrad)" strokeWidth={2.5} name="Reservations" />
-              <Area type="monotone" dataKey="revenue" stroke="#8B5CF6" fill="url(#revGrad)" strokeWidth={2} name="Revenue (RM)" />
+              <Area type="monotone" dataKey="revenue" stroke="#8B5CF6" fill="url(#revGrad)" strokeWidth={2} name="Revenue (USD)" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
